@@ -3,7 +3,12 @@ public class Vehicle {
     private String topSpeed;
     
     protected void setFuel(int i){
-        fuel = i;
+        if (i>=0){
+            fuel = i;
+        }
+        else{
+            fuel += i;
+        }
     }
     protected void setTopSpeed(String n){
         topSpeed = n;
@@ -15,6 +20,6 @@ public class Vehicle {
         return topSpeed;
     }  
     public void showInfo(){
-        System.out.println("Fuel i "+fuel+" litre and Top Speed is "+topSpeed+" m/s");
+        System.out.println("Fuel i "+fuel+" litre and Top Speed is "+topSpeed+" m/s.");
     }
 }

@@ -8,8 +8,8 @@ public class Car extends Vehicle{
         return typeEngine;
     }
     public void showCarInfo(){
-        System.out.println("Car engine is "+typeEngine);
-        System.out.println("Fuel is "+this.getFuel()+"litre and Top Speed is "+this.getTopSpeed()+" m/s");
+        System.out.println("Car engine is "+typeEngine+".");
+        System.out.println("Fuel is "+this.getFuel()+" litre and Top Speed is "+this.getTopSpeed()+" m/s.");
     }
     public void setCarInfo(int s, String t, String y){
         this.setFuel(s);
