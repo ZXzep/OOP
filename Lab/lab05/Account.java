@@ -2,6 +2,7 @@ public class Account {
     protected double balance;
     protected String name;
 
+    public Account(){}
     public Account(double balance, String name) {
         this.balance = balance;
         this.name = name;
