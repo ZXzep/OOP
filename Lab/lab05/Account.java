@@ -19,7 +19,7 @@ public class Account {
     public void withdraw(double a) {
         if (a > 0) {
             this.balance = this.balance - a;
-            System.out.println(a + " baht is withdrawn form " + this.name + ".");
+            System.out.println(a + " baht is withdrawn from " + this.name + ".");
         } else if (a < 0) {
             System.out.println("Input number must be a positive integer.");
         } else if ((this.balance - a) < 0) {
