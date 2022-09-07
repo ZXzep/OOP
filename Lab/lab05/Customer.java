@@ -1,4 +1,4 @@
-public class Customer extends CheckingAccount{
+public class Customer{
     private String firstName;
     private String lastName;
     private CheckingAccount acct;
@@ -44,7 +44,7 @@ public class Customer extends CheckingAccount{
 
     public String toString() {
         if (acct == null) {
-            return firstName+" "+lastName+" doesn't have account.";
+            return firstName+" "+lastName+" doesn’t have account.";
         }
         else if (acct != null) {
             return "The " + firstName + " account has " + acct.getBalance() + " baht and " + acct.getCredit()+ " credits.";
