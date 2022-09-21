@@ -37,6 +37,6 @@ public class SimpleCalGUI extends JFrame{
         fr.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 public static void main(String[] args) {
-    new SimpleCalGUI();
+    new SimpleCalGUI(); 
 }
 }
