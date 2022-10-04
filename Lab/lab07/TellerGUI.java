@@ -1,3 +1,5 @@
+import javax.crypto.spec.PBEKeySpec;
+import javax.imageio.plugins.jpeg.JPEGHuffmanTable;
 import javax.swing.*;
 import java.awt.*;
 public class TellerGUI extends JFrame{
@@ -9,6 +11,8 @@ public class TellerGUI extends JFrame{
         JButton b1 = new JButton("Deposit");
         JButton b2 = new JButton("Withdraw");
         JButton b3 = new JButton("Exit");
+        JTextField txt = new JTextField();
+        txt.setEditable(false);
         JLabel txt1 = new JLabel("Balance");
         JTextField tf1 = new JTextField("6000");
         JLabel txt2 = new JLabel("Amount");
@@ -24,10 +28,11 @@ public class TellerGUI extends JFrame{
         p3.setLayout(new GridLayout(1,3));
         p3.add(b1); p3.add(b2); p3.add(b3);
 
-        fr.setLayout(new GridLayout(3,1));
+        fr.setLayout(new GridLayout(4,1));
         fr.add(p1);
         fr.add(p2);
         fr.add(p3);
+        fr.add(txt);
         fr.pack();
         // fr.setSize(500, 400);
         fr.setVisible(true);
