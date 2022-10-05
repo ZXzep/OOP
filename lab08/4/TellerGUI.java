@@ -43,6 +43,7 @@ public class TellerGUI implements ActionListener{
         
         bnw.addActionListener(this);
         bnd.addActionListener(this);
+        bne.addActionListener(this);
     }
     public void actionPerformed(ActionEvent ev){
             if(ev.getSource().equals(bnw)){
@@ -50,10 +51,14 @@ public class TellerGUI implements ActionListener{
                     ac.setBalance(ac.getBalance()-Integer.parseInt(txt2.getText()));
                     txt1.setText((int)ac.getBalance()+"");
                 }
-            }else if(ev.getSource().equals(bnd)){
+            }
+            else if(ev.getSource().equals(bnd)){
                 System.out.println(ac.getBalance());
                 ac.setBalance(ac.getBalance()+Integer.parseInt(txt2.getText()));
                 txt1.setText((int)ac.getBalance()+"");
+            }
+            else if(ev.getSource().equals(bne)){
+                System.exit(1);
             }
         }
 }
