@@ -33,7 +33,7 @@ public class Customer{
     public Customer(){
         this.firstName = "";
         this.lastName = "";
-        ArrayList<Account> acct = new ArrayList<Account>(); //Arraylist = acct = new ArrayList<Account>()
+        ArrayList<Account> acct = new ArrayList<Account>();
      }
     public Customer(String firstName, String lastName){
      this.firstName = firstName;
@@ -42,6 +42,6 @@ public class Customer{
     }
 
     public String toString(){
-        return "Name : "+this.getFirstName()+" LastName : "+this.getLastName()+" have "+this.getNumOfAccount()+" account.";
+        return "Name : "+this.getFirstName()+" LastName : "+this.getLastName()+" has "+this.getNumOfAccount()+" account.";
     }
 }
