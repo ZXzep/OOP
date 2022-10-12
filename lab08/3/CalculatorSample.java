@@ -6,7 +6,7 @@ public class CalculatorSample implements ActionListener{
     protected JButton bn1, bn2, bn3, bn4, bn5, bn6, bn7, bn8, bn9, bnp, bnm, bnt, bnd, bne, bnc, bn0;
     protected JPanel p1, p2;
     protected JTextField txt;
-    private int temp = 0;
+    private double temp = 0;
     private String check = "";
 //    private ActionHandler ah = new ActionHandler();
     public CalculatorSample(){
@@ -105,7 +105,7 @@ public class CalculatorSample implements ActionListener{
             }else if(check.equals("X")){
                 temp *= Integer.parseInt(this.txt.getText());
             }else if(check.equals("/")){
-                temp /= Integer.parseInt(this.txt.getText());
+                temp /= Float.parseFloat(this.txt.getText());
             }
             txt.setText(temp+"");
         }
