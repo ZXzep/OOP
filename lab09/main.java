@@ -1,6 +1,6 @@
 public class main {
     public static void main(String[] args) {
-        Customer cust = new Customer("Somsri", "Boonjing");
+        Customer3 cust = new Customer3("Somsri", "Boonjing");
         Account acct1 = new Account(5000, "Somsri01");
         Account acct2 = new Account(3000, "Somsri02");
         cust.addAccount(acct1);

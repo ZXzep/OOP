@@ -1,10 +1,11 @@
 import java.util.ArrayList;
 
-public class Customer{
+public class Customer3{
     private String firstName;
     private String lastName;
-    ArrayList acct;
+    ArrayList<Account> acct;
     private int numOfAccount = 0;
+    
 
     public void setFirstName(String firstName){
         this.firstName = firstName;
@@ -20,22 +21,22 @@ public class Customer{
     }
 
     public Account getAccount(int index){
-        return (Account)acct.get(index);
+        return acct.get(index);
     }
     public void addAccount(Account acct){
         this.acct.add(acct);
         numOfAccount += 1;
     }
     public int getNumOfAccount(){
-        return numOfAccount;
+        return acct.size();
     }
 
-    public Customer(){
+    public Customer3(){
         this.firstName = "";
         this.lastName = "";
         ArrayList<Account> acct = new ArrayList<Account>();
      }
-    public Customer(String firstName, String lastName){
+    public Customer3(String firstName, String lastName){
      this.firstName = firstName;
      this.lastName = lastName;
       acct = new ArrayList();
