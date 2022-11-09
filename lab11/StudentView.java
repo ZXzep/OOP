@@ -23,27 +23,7 @@ public class StudentView implements ActionListener, WindowListener{
         btnD = new JButton("Deposit");
         btnW = new JButton("Withdraw");
 
-        Student s = null;
-        try(FileInputStream fis = new FileInputStream("StudentM.dat");
-            ObjectInputStream ois = new ObjectInputStream(fis);){
-            s = (Student) ois.readObject();
-        }
-        catch(IOException e){
-            System.out.println(e);
-        }
-        catch(ClassNotFoundException c){
-            System.out.println(c);
-        }
-        if(s != null){
-            itf.setText(s.getID()+"");
-            ntf.setText(s.getName()+"");
-            mtf.setText(s.getMoney()+"");
-        }
-        else{
-            itf.setText("");
-            ntf.setText("");
-            mtf.setText(0+"");
-        }
+      
 
         mtf.setEditable(false);
 
@@ -87,7 +67,30 @@ public class StudentView implements ActionListener, WindowListener{
         }
     }
 
-    public void windowOpened(WindowEvent ev){}
+    public void windowOpened(WindowEvent ev){
+        
+        Student s = null;
+        try(FileInputStream fis = new FileInputStream("StudentM.dat");
+            ObjectInputStream ois = new ObjectInputStream(fis);){
+            s = (Student) ois.readObject();
+        }
+        catch(IOException e){
+            System.out.println(e);
+        }
+        catch(ClassNotFoundException c){
+            System.out.println(c);
+        }
+        if(s != null){
+            itf.setText(s.getID()+"");
+            ntf.setText(s.getName()+"");
+            mtf.setText(s.getMoney()+"");
+        }
+        else{
+            itf.setText("");
+            ntf.setText("");
+            mtf.setText(0+"");
+        }
+    }
     public void windowIconified(WindowEvent e){}
     public void windowDeiconified(WindowEvent e){}
     public void windowActivated(WindowEvent e){}

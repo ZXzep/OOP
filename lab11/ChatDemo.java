@@ -5,7 +5,7 @@ import javax.swing.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.io.*;
-public class ChatDemo implements ActionListener {
+public class ChatDemo implements ActionListener, WindowListener {
     private JFrame f;
     private JPanel p, p1, p2, p3;
     private JTextArea tr;
@@ -27,16 +27,6 @@ public class ChatDemo implements ActionListener {
         tr.setColumns(45);
         tf.setColumns(45);
 
-        try(FileReader fr = new FileReader("ChatDemo.dat")){
-            int tube;
-            while ((tube = fr.read()) != -1){
-                TextChat += (char)tube;
-            }
-            tr.setText(TextChat);
-        }
-        catch(IOException er){
-            er.printStackTrace();
-        }
 
         p.setLayout(new BorderLayout());
 
@@ -59,6 +49,7 @@ public class ChatDemo implements ActionListener {
 
         btnS.addActionListener(this);
         btnR.addActionListener(this);
+        f.addWindowListener(this);
 
         f.add(p);
         f.pack();
@@ -75,23 +66,49 @@ public class ChatDemo implements ActionListener {
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
             tr.setText(tr.getText()+dtf.format(LocalDateTime.now())+" : "+tf.getText()+"\n");
             tf.setText("");
-            try(FileWriter fw = new FileWriter("ChatDemo.dat")){
-                TextChat = tr.getText();
-                fw.write(TextChat);
-            }
-            catch(IOException e){
-                System.out.println(e);
-            }
+            // try(FileWriter fw = new FileWriter("ChatDemo.dat")){
+            //     TextChat = tr.getText();
+            //     fw.write(TextChat);
+            // }
+            // catch(IOException e){
+            //     System.out.println(e);
+            // }
         }
         else if(ev.getSource().equals(btnR)){
             tr.setText("");
             tf.setText("");
-            try(FileWriter fw = new FileWriter("ChatDemo.dat")){
-                fw.write("");
+            // try(FileWriter fw = new FileWriter("ChatDemo.dat")){
+            //     fw.write("");
+            // }
+            // catch(IOException e){
+            //     System.out.println(e);
+            // }
+        }
+    }
+    public void windowClosing(WindowEvent e) {
+        try (FileWriter fw = new FileWriter("ChatDemo.dat")) {
+            TextChat = tr.getText();
+            fw.write(TextChat);
+        }
+        catch (IOException ex) {
+            System.out.println(ex);
+        }
+    }
+    public void windowClosed(WindowEvent e) {}
+    public void windowIconified(WindowEvent e) {}
+    public void windowDeiconified(WindowEvent e) {}
+    public void windowActivated(WindowEvent e) {}
+    public void windowDeactivated(WindowEvent e) {}
+    public void windowOpened(WindowEvent ev){
+        try (FileReader fr = new FileReader("ChatDemo.dat")) {
+            int tube;
+            while ((tube = fr.read()) != -1) {
+                TextChat += (char) tube;
             }
-            catch(IOException e){
-                System.out.println(e);
-            }
+            tr.setText(TextChat);
+        }
+        catch (IOException er) {
+            er.printStackTrace();
         }
     }
     public static void main(String[] args) {
