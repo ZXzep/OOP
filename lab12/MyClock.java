@@ -9,9 +9,17 @@ public class MyClock extends JLabel implements Runnable{
         try{
             while(true){
                 checkPause();
-                int sec = time%60;
-                int min = (time/60)%60;
-                int hour = (time/3600)%24;
+
+                //  <------------------------- NO2 ---------------------->
+               Calendar d = Calendar.getInstance();
+               int sec = d.get(Calendar.SECOND);
+               int min = d.get(Calendar.MINUTE);
+               int hour = d.get(Calendar.HOUR_OF_DAY);
+
+               //<------------------------- NO3,NO4 ---------------------->
+                // int sec = time%60;
+                // int min = (time/60)%60;
+                // int hour = (time/3600)%24;
                 
                 this.setEnabled(false);
                 this.setBorder(null);

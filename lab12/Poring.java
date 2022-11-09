@@ -32,7 +32,7 @@ public class Poring extends JFrame implements Runnable, MouseListener{
     public void run(){
         try{
             while(true){
-                Thread.sleep(30);
+                Thread.sleep(10);
                 if(Math.random()<=0.5){
                     if(Math.random()<=0.5){
                         f.setLocation(f.getX()+2, f.getY()+2);
