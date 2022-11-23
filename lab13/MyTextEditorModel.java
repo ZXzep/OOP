@@ -8,6 +8,7 @@ public class MyTextEditorModel {
     public void loadText(File f, MyTextEditorView view){
         try(FileInputStream fin = new FileInputStream(f)){
           int ch = fin.read();
+          view.getTextArea().setText("");
           while (ch != -1){
               view.getTextArea().setText(view.getTextArea().getText()+(char)ch);
               ch = fin.read();
