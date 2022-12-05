@@ -9,18 +9,15 @@ public class MyClock extends JLabel implements Runnable{
         try{
             while(true){
                 checkPause();
-
                 //  <------------------------- NO2 ---------------------->
                Calendar d = Calendar.getInstance();
                int sec = d.get(Calendar.SECOND);
                int min = d.get(Calendar.MINUTE);
                int hour = d.get(Calendar.HOUR_OF_DAY);
-
                //<------------------------- NO3,NO4 ---------------------->
                 // int sec = time%60;
                 // int min = (time/60)%60;
                 // int hour = (time/3600)%24;
-                
                 this.setEnabled(false);
                 this.setBorder(null);
                 this.setFont(new Font("Tahoma",Font.BOLD, 80));
@@ -32,7 +29,6 @@ public class MyClock extends JLabel implements Runnable{
             System.out.println(e);
         }
     }
-    
     public void pauseThread(){
         paused = true;
         System.out.println("Paused");
@@ -47,7 +43,6 @@ public class MyClock extends JLabel implements Runnable{
             }
         }
     }
-    
     public synchronized void resumeThread(){
         paused = false;
         this.notify();

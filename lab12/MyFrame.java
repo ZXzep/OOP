@@ -13,7 +13,7 @@ public class MyFrame implements MouseListener{
         clock = new MyClock();
         t = new Thread(clock);
         t.start();
-        
+    
         clock.addMouseListener(this);
         
         frame.setLayout(new FlowLayout());

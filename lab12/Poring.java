@@ -50,7 +50,6 @@ public class Poring extends JFrame implements Runnable, MouseListener{
         }catch(Exception e){
             System.out.print(e);
         }
-        
     }
     public synchronized void mouseClicked(MouseEvent ev){}
     public void mousePressed(MouseEvent ev){

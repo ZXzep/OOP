@@ -94,11 +94,6 @@ public class ChatDemo implements ActionListener, WindowListener {
             System.out.println(ex);
         }
     }
-    public void windowClosed(WindowEvent e) {}
-    public void windowIconified(WindowEvent e) {}
-    public void windowDeiconified(WindowEvent e) {}
-    public void windowActivated(WindowEvent e) {}
-    public void windowDeactivated(WindowEvent e) {}
     public void windowOpened(WindowEvent ev){
         try (FileReader fr = new FileReader("ChatDemo.dat")) {
             int tube;
@@ -111,6 +106,11 @@ public class ChatDemo implements ActionListener, WindowListener {
             er.printStackTrace();
         }
     }
+    public void windowClosed(WindowEvent e) {}
+    public void windowIconified(WindowEvent e) {}
+    public void windowDeiconified(WindowEvent e) {}
+    public void windowActivated(WindowEvent e) {}
+    public void windowDeactivated(WindowEvent e) {}
     public static void main(String[] args) {
         new ChatDemo();
     }

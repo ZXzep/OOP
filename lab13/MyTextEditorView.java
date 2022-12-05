@@ -25,7 +25,6 @@ public class MyTextEditorView {
         menuFile.addSeparator();
         menuFile.add(itemClose);
         
-        
         window.setLayout(new FlowLayout());
         window.add(textArea);
         
