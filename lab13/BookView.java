@@ -39,7 +39,8 @@ public class BookView {
         orderingPanel.add(deleteButton);
         
         bottomPanel.setLayout(new GridLayout(2,1));
-        bottomPanel.add(collectionPanel);   bottomPanel.add(orderingPanel);
+        bottomPanel.add(collectionPanel);
+        bottomPanel.add(orderingPanel);
         
         topPanel.setLayout(new GridLayout(3,2));
         topPanel.add(nameLabel);    topPanel.add(nameTextField);
